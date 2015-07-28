@@ -45,7 +45,7 @@
     UIImage *image = [UIImage imageWithData:data];
     
     NSLog(@"返回数据给主线程");
-//    [self performSelectorOnMainThread:@selector(downloadFinished:) withObject:image waitUntilDone:YES];
+    
     [self.imageView performSelector:@selector(setImage:) onThread:[NSThread mainThread] withObject:image waitUntilDone:YES];
 }
 
